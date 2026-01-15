@@ -4,7 +4,7 @@ from tqdm import tqdm
 
 from data_acquisition import get_spectrogram_from_dataset, TRAINING_SPEAKERS, EVAL_SPEAKERS
 
-THRESHOLD = 2.5
+THRESHOLD = 725
 SPEAKERS = EVAL_SPEAKERS
 NORMALIZE = True
 
@@ -124,9 +124,9 @@ def classify_dataset():
 
 
 if __name__ == '__main__':
+    SPEAKERS = TRAINING_SPEAKERS
     # get_random_words_true_negatives(0)
-    # SPEAKERS = TRAINING_SPEAKERS
-    # print(f"The training accuracy is: ", classify_dataset())
+    print(f"The training accuracy is: ", classify_dataset())
 
     SPEAKERS = EVAL_SPEAKERS
     print(f"The evaluation accuracy is: ", classify_dataset())
